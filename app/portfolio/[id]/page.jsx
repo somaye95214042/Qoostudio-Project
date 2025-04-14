@@ -1,4 +1,5 @@
 import portfolioData from "../../database/portfolioData.json";
+import Footer from "@/app/components/Footer";
 
 const PortfolioItem = ({ params }) => {
   const item = portfolioData.find((p) => p.id.toString() === params.id);
@@ -14,6 +15,7 @@ const PortfolioItem = ({ params }) => {
       <p className="text-[20px] text-black font-semibold pt-[50px]">
         {item.description}
       </p>
+      <Footer/>
     </main>
   );
 };
