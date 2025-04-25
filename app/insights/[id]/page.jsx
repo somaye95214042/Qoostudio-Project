@@ -1,10 +1,10 @@
 "use client"
 
 import { useState, useEffect } from "react";
-import portfolioData from "../../database/portfolioData.json";
+import postData from "../../database/postData.json";
 import Footer from "@/app/components/Footer";
 
-const PortfolioItem = ({ params }) => {
+const PostItem = ({ params }) => {
   // State to handle loading state
   const [isLoading, setIsLoading] = useState(true);
   const [item, setItem] = useState(null);
@@ -13,7 +13,7 @@ const PortfolioItem = ({ params }) => {
   useEffect(() => {
     // Simulate a delay in loading the item (e.g., from an API)
     const fetchData = () => {
-      const foundItem = portfolioData.find((p) => p.id.toString() === params.id);
+      const foundItem = postData.find((p) => p.id.toString() === params.id);
       setItem(foundItem);
       setIsLoading(false); // Set loading to false once data is fetched
     };
@@ -48,4 +48,4 @@ const PortfolioItem = ({ params }) => {
   );
 };
 
-export default PortfolioItem;
+export default PostItem;

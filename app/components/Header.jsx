@@ -42,7 +42,7 @@ export default function Header() {
             <Link href="/insights">چشم انداز</Link>
             <Link href="/contact">تماس با ما</Link>
             <Link
-              href="/contact"
+              href="/book-a-demo"
               className="px-5 py-2 rounded-full hover:bg-black hover:text-white transition-colors border border-white"
             >
               چگونه با ما در ارتباط باشید
