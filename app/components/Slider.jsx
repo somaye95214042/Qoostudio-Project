@@ -70,7 +70,7 @@ export default function ProjectSlider() {
               </div>
 
               {/* تصاویر */}
-              <div className="flex-1 grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="flex-1 grid grid-cols-2 md:grid-cols-3 gap-6">
                 {slide.images.map((img, idx) => (
                   <div
                     key={idx}
@@ -79,7 +79,7 @@ export default function ProjectSlider() {
                     <img
                       src={img}
                       alt={`تصویر ${idx}`}
-                      className="object-cover w-full h-130 transform group-hover:translate-y-[-20px] transition-transform duration-300"
+                      className="object-cover w-full h-40 md:h-130 transform group-hover:translate-y-[-20px] transition-transform duration-300"
                     />
                   </div>
                 ))}
