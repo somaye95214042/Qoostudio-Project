@@ -1,7 +1,14 @@
+'use client'
+
 import Tabs from "./components/Tabs";
 import Footer from "./components/Footer";
+import { useState } from "react";
+
 
 export default function Home() {
+
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <>
       {/* Hero Section with Video */}
@@ -17,10 +24,52 @@ export default function Home() {
         </video>
 
         <div className="absolute inset-0 flex items-center justify-center px-4 text-white text-center">
-          <h1 className="text-[24px] sm:text-[30px] md:text-[40px] lg:text-[60px] xl:text-[60px] font-semibold leading-tight">
-            تصویرسازی مفاهیم پیچیده به زبان ساده
-          </h1>
+          <div className="relative max-w-4xl flex flex-col items-end text-right space-y-[100px]">
+            <h1 className="text-[24px] sm:text-[30px] md:text-[40px] lg:text-[60px] xl:text-[60px] font-semibold leading-tight">
+              تصویرسازی مفاهیم پیچیده به زبان ساده
+            </h1>
+            <button onClick={() => setIsOpen(true)}
+              className="text-[15px] text-white px-6 py-3
+            bg-[url('https://qoostudio.com/wp-content/uploads/2022/08/Exclusion-1@2x.png')] 
+             bg-center bg-contain bg-no-repeat bg-[rgba(0,0,0,0)]
+             hover:scale-115 cursor-pointer transition-transform duration-300">
+              ویدیوهای ما را بررسی کنید
+            </button>
+          </div>
         </div>
+
+        {isOpen && (
+          <div className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50">
+            <div className="relative w-full max-w-4xl bg-black p-4">
+              <button
+                onClick={() => setIsOpen(false)}
+                className="absolute -top-12 right-1/2 translate-x-1/2 bg-white text-pink-600 rounded-full w-12 h-12 flex items-center justify-center font-bold z-10"
+              >
+                ✕
+              </button>
+
+              {/* Video container with background image */}
+              <div className="relative w-full pt-[56.25%] overflow-hidden rounded-lg">
+                <div className="absolute top-0 left-0 w-full h-full">
+                  {/* This image is shown before video loads */}
+                  <img
+                    src="https://i.vimeocdn.com/video/1502939854-492cb58553b18483ee872af6989dc2f68ec780ddb08fc88d0246beae498228ed-d_640"
+                    alt="Video placeholder"
+                    className="absolute top-0 left-0 w-full h-full object-cover z-0"
+                  />
+                  {/* Vimeo iframe */}
+                  <iframe
+                    src="https://player.vimeo.com/video/875367930?autoplay=1&muted=1&loop=1&background=1"
+                    allow="autoplay; fullscreen"
+                    allowFullScreen
+                    className="absolute top-0 left-0 w-full h-full z-10"
+                  ></iframe>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
       </section>
 
       {/* Section Title */}

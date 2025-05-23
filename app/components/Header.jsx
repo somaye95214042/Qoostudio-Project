@@ -37,13 +37,21 @@ export default function Header() {
 
           {/* Desktop Nav */}
           <nav className="hidden md:flex gap-[80px] text-[22px] font-semibold items-center">
-            <Link href="/about">درباره ما</Link>
-            <Link href="/portfolio">کارهای ما</Link>
-            <Link href="/insights">چشم انداز</Link>
-            <Link href="/contact">تماس با ما</Link>
+            <Link href="/about" className="hover:underline underline-offset-4">
+              درباره ما
+            </Link>
+            <Link href="/portfolio" className="hover:underline underline-offset-4">
+              کارهای ما
+            </Link>
+            <Link href="/insights" className="hover:underline underline-offset-4">
+              چشم انداز
+            </Link>
+            <Link href="/contact" className="hover:underline underline-offset-4">
+              تماس با ما
+            </Link>
             <Link
               href="/book-a-demo"
-              className="px-5 py-2 rounded-full hover:bg-black hover:text-white transition-colors border border-white"
+              className="px-5 py-2 rounded-full hover:bg-white hover:text-black transition-colors border border-white"
             >
               چگونه با ما در ارتباط باشید
             </Link>
@@ -61,21 +69,24 @@ export default function Header() {
       {/* Mobile Menu */}
       {isOpen && (
         <div className="md:hidden bg-white text-black px-6 py-4 space-y-4">
-          <Link href="/about" className="block text-right font-medium">
+          <Link href="/about" className="block text-right font-medium hover:underline underline-offset-4">
             درباره ما
           </Link>
-          <Link href="/portfolio" className="block text-right font-medium">
+          <Link href="/portfolio" className="block text-right font-medium hover:underline underline-offset-4">
             کارهای ما
           </Link>
-          <Link href="/insights" className="block text-right font-medium">
+          <Link href="/insights" className="block text-right font-medium hover:underline underline-offset-4">
             چشم انداز
           </Link>
-          <Link href="/contact" className="block text-right font-medium">
+          <Link href="/contact" className="block text-right font-medium hover:underline underline-offset-4">
             تماس با ما
           </Link>
-          <button className="text-white py-2 rounded-full mt-2 transition">
+          <Link
+            href="/book-a-demo"
+            className="block text-center mt-2 py-2 text-white bg-black rounded-full hover:underline underline-offset-4"
+          >
             چگونه با ما در ارتباط باشید؟
-          </button>
+          </Link>
         </div>
       )}
     </header>

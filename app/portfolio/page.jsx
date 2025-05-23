@@ -60,24 +60,41 @@ const Portfolio = () => {
             {/* Tailwind Spinner */}
           </div>
         ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 pb-32">
-            {filteredData.map((item) => (
-              <Link key={item.id} href={`/portfolio/${item.id}`}>
-                <div className="relative group cursor-pointer overflow-hidden shadow-md">
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    className="object-cover w-full h-64 sm:h-72 md:h-80 lg:h-96 transition-transform duration-300 group-hover:scale-105"
-                  />
-                  <div className="absolute bottom-0 right-0 left-0 bg-gradient-to-t from-black/70 to-transparent px-4 py-6">
-                    <h2 className="text-white text-xl sm:text-2xl md:text-3xl font-semibold text-right">
-                      {item.title}
-                    </h2>
+          <>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 pb-32">
+              {filteredData.map((item) => (
+                <Link key={item.id} href={`/portfolio/${item.id}`}>
+                  <div className="relative cursor-pointer overflow-hidden shadow-md">
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      className="object-cover w-full h-64 sm:h-72 md:h-80 lg:h-96 transition-transform duration-300 hover:scale-105"
+                    />
+                    <div
+                      className="absolute inset-x-0 px-4 py-3 z-10"
+                      style={{ bottom: 20, top: "auto" }}
+                    >
+                      <h2 className="text-white text-[20px] sm:text-[30px] md:text-[40px] font-semibold text-right">
+                        {item.title}
+                      </h2>
+                    </div>
                   </div>
-                </div>
+                </Link>
+              ))}
+            </div>
+
+            {/* Centered Button */}
+            <div className="flex justify-center pb-20">
+              <Link href="/book-a-demo"
+                className="flex items-center text-[15px] text-black px-[200px] py-3
+                bg-[url('https://qoostudio.com/wp-content/uploads/2022/08/Exclusion-1@2x.png')] 
+                bg-center bg-contain bg-no-repeat bg-[rgba(0,0,0,0)]
+               cursor-pointer transition-transform duration-300"
+              >
+                پروژه های خود را به ما بسپارید
               </Link>
-            ))}
-          </div>
+            </div>
+          </>
         )}
       </main>
       <Footer />
